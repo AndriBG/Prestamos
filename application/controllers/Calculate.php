@@ -6,9 +6,6 @@ class Calculate extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this
-            ->load
-            ->model('CalculateModel');
     }
 
     public function index()

@@ -6,9 +6,9 @@ var btnCalc = document.getElementById('calculate');
 
 if (btnCalc) {
 
-	btnCalc.addEventListener('click', function () {
+	btnCalc.addEventListener('click', function (e) {
 
-		if (validateFiels()) {
+		if (validateFields()) {
 
 			let data = {
 				"capital": cap.value,
@@ -41,9 +41,22 @@ if (btnCalc) {
 
 		}
 	});
+
+	cap.addEventListener('blur', validateField);
+	fees.addEventListener('blur', validateField);
 }
 
-function validateFiels() {
+function validateField(evt){
+
+	if(evt.target.value < 1 || isNaN(evt.target.value) || evt.target.value == ''){
+		evt.target.style.borderBottom = '1px solid red';
+	} else {
+		evt.target.style.borderBottom = 'none';
+	}
+}
+
+function validateFields() {
+
 	let isValid = true;
 
 	let value_cap = cap.value;
@@ -51,7 +64,7 @@ function validateFiels() {
 	let value_freq = freq.value;
 	let value_date = date.value;
 
-	if (value_cap == '' || value_cap == undefined || value_cap == null) {
+	if (value_cap == '' || value_cap == undefined || value_cap == null ) {
 		isValid = false;
 	}
 
@@ -100,6 +113,8 @@ function createFee(value) {
 
 	let table = document.getElementById('body-loan');
 
+	table.innerHTML = '';
+
 	table.innerHTML = `
 	<tr>
 		<td>1</td>
@@ -128,14 +143,11 @@ function convertingDate(tdDate, value) {
 	let delim2 = tdDate.lastIndexOf("/");
 
 	let day = parseInt(tdDate.substring(0, delim1), 10);
-
 	let month = parseInt(tdDate.substring(delim1 + 1, delim2), 10);
-
 	let year = parseInt(tdDate.substring(delim2 + 1), 10);
 
 	let newDate = new Date(year, month - 1, day);
-
 	newDate.setDate(newDate.getDate() + value);
-
+	
 	return newDate.toLocaleDateString();
 }
