@@ -20,7 +20,7 @@
 						<input type="number" class="form-control form-control-sm" id="fees">
 					</div>
 					<div class="form-group mb-3">
-						<select class="custom-select" id="frequency">
+						<select class="custom-select" name="freq" id="frequency">
 							<option >Frecuencia</option>
 							<option value="1">Diario</option>
 							<option value="2">Semanal</option>
@@ -30,7 +30,7 @@
 					</div>
 					<div class="form-group mb-3">
 						<label for="start_date">Fecha de inicio</label>
-						<input type="date" class="form-control" id="start_date">
+						<input type="date" name="date" class="form-control" id="start_date">
 					</div>
 					<button type="button" id="calculate" class="btn btn-primary">Calcular</button>
 				</form>

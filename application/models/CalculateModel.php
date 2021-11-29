@@ -10,9 +10,7 @@ class CalculateModel extends CI_Model
 
     public function getById($id)
     {
-        $query = $this
-            ->db
-            ->get_where('prestamo', array(
+        $query = $this->db->get_where('prestamo', array(
             'id' => $id
         ));
         return $query->result();
@@ -22,13 +20,11 @@ class CalculateModel extends CI_Model
     {
         $data = array(
             "capital" => $cap,
-            "cantidad_cuota" => $amt_fees,
-            "frecuencia" => $freq,
-            "fecha_inicio" => $s_date
+            "amount_of_fees" => $amt_fees,
+            "frequency" => $freq,
+            "date_creation" => $s_date
         );
 
-        $this
-            ->db
-            ->insert('prestamo', $data);
+        $this->db->insert('prestamo', $data);
     }
 }

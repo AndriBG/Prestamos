@@ -119,7 +119,7 @@ function createFee(value) {
 	<tr>
 		<td>1</td>
 		<td>${myDate.toLocaleDateString()}</td>
-		<td>${amount_of_fee}</td>
+		<td>${Number.parseFloat(amount_of_fee).toFixed(2)}</td>
 	</tr>`;
 
 	for (let i = 2; i <= fees.value; i++) {
@@ -130,7 +130,7 @@ function createFee(value) {
 			<tr>
 				<td>${i}</td>
 				<td>${convertingDate(tdDate,value)}</td>
-				<td>${amount_of_fee}</td>
+				<td>${Number.parseFloat(amount_of_fee).toFixed(2)}</td>
 			</tr>`;
 
 		table.innerHTML += bloc;

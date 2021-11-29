@@ -10,42 +10,21 @@ class Calculate extends CI_Controller
 
     public function index()
     {
-        $this
-            ->load
-            ->view('layout/header');
-        $this
-            ->load
-            ->view('calculate');
-        $this
-            ->load
-            ->view('layout/footer');
+        $this->load->view('layout/header');
+        $this->load->view('calculate');
+        $this->load->view('layout/footer');
     }
 
     public function Save()
     {
-        $capital = $this
-            ->input
-            ->post('capital');
-        $amt_fees = $this
-            ->input
-            ->post('amt_fees');
-        $freq = $this
-            ->input
-            ->post('freq');
-        $s_date = $this
-            ->input
-            ->post('s_date');
+        $capital = $this->input->post('capital');
+        $amt_fees = $this->input->post('amt_fees');
+        $freq = $this->input->post('freq');
+        $s_date = $this->input->post('s_date');
 
-        if ($this
-            ->input
-            ->is_ajax_request())
+        if ($this->input->is_ajax_request())
         {
-
-            $this
-                ->CalculateModel
-                ->insert($capital, $amt_fees, $freq, $s_date);
+            $this->CalculateModel->insert($capital, $amt_fees, $freq, $s_date);
         }
-
     }
-
 }
