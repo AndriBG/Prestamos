@@ -16,9 +16,9 @@ class LoanModel extends CI_Model
         return $query->result();
     }
 
-    public function get_all(){
-        return $this->db->get()->result();
-    }
+    // public function get_all(){
+    //     return $this->db->get()->result();
+    // }
 
     public function insert($cap, $amt_fees, $freq, $s_date)
     {
