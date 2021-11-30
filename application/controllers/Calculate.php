@@ -10,7 +10,7 @@ class Calculate extends CI_Controller
 
     public function index()
     {
-        $data['Loan'] = $this->LoanModel->get_all();
+        $data['Loan'] = $this->CalculateModel->get_all();
 
         $this->load->view('layout/header');
         $this->load->view('calculate', $data);
@@ -26,7 +26,7 @@ class Calculate extends CI_Controller
 
         if ($this->input->is_ajax_request())
         {
-            $this->LoanModel->insert($capital, $amt_fees, $freq, $s_date);
+            $this->CalculateModel->insert($capital, $amt_fees, $freq, $s_date);
         }
     }
 }
