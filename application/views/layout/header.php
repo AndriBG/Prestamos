@@ -44,6 +44,9 @@
                         
                     </ul>
                 </div> -->
+				<div style="float: right; display: inline-block;">
+					<a href="https://edurlix.github.io/prestamapp/" target="_blank"><span>Cerrar sesión</span></a>
+				</div>
 			</div>
 		</nav>
 	</header>
