@@ -10,10 +10,10 @@ class Calculate extends CI_Controller
 
     public function index()
     {
-        $data['Loan'] = $this->CalculateModel->get_all();
+        // $data['Loan'] = $this->LoanModel->get_all();
 
         $this->load->view('layout/header');
-        $this->load->view('calculate', $data);
+        $this->load->view('calculate');
         $this->load->view('layout/footer');
     }
 
