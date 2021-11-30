@@ -101,9 +101,9 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => $url["us-cdbr-east-04.cleardb.com"],
-	'username' => $url["b23dffdcf4c975"],
-	'password' => $url["0b80e71e"],
+	'hostname' => $url["host"],
+	'username' => $url["user"],
+	'password' => $url["pass"],
 	'database' => substr($url["path"], 1),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
