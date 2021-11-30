@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class CalculateModel extends CI_Model
+class LoanModel extends CI_Model
 {
     function __construct()
     {
@@ -14,6 +14,10 @@ class CalculateModel extends CI_Model
             'id' => $id
         ));
         return $query->result();
+    }
+
+    public function get_all(){
+        return $this->db->get()->result();
     }
 
     public function insert($cap, $amt_fees, $freq, $s_date)
