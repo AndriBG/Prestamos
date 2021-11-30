@@ -45,7 +45,7 @@
                     </ul>
                 </div> -->
 				<div style="float: right; display: inline-block;">
-					<a href="https://edurlix.github.io/prestamapp/" target="_blank" class="btn btn-secondary"><span>Cerrar sesión</span></a>
+					<a href="https://edurlix.github.io/prestamapp/" class="btn btn-secondary"><span>Cerrar sesión</span></a>
 				</div>
 			</div>
 		</nav>
