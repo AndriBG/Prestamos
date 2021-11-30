@@ -33,6 +33,7 @@
 						<input type="date" name="date" class="form-control" id="start_date">
 					</div>
 					<button type="button" id="calculate" class="btn btn-primary">Calcular</button>
+					<button type="button" id="delete_table" class="btn btn-danger">Borrar tabla</button>
 				</form>
 			</div>
 		</div>
@@ -54,3 +55,13 @@
 	</div>
 	</div>
 </div>
+
+<script>
+
+	document.getElementById('delete_table') && document.getElementById('delete_table').addEventListener('click', deleteTable); 
+
+	function deleteTable(e){
+		document.getElementById('body-loan').innerHTML = '';
+	}
+
+</script>
