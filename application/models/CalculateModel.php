@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class LoanModel extends CI_Model
+class CalculateModel extends CI_Model
 {
     function __construct()
     {
@@ -16,17 +16,18 @@ class LoanModel extends CI_Model
         return $query->result();
     }
 
-    public function get_all(){
-        return $this->db->get()->result();
-    }
+    // public function get_all(){
+    //     return $this->db->get()->result();
+    // }
 
-    public function insert($cap, $amt_fees, $freq, $s_date)
+    public function insert($capital, $amt_fees, $freq, $start_date)
     {
         $data = array(
-            "capital" => $cap,
+            "capital" => $capital,
             "amount_of_fees" => $amt_fees,
             "frequency" => $freq,
-            "date_creation" => $s_date
+            "date_creation" => $start_date,
+            'last_modifided' => date('Y:m:d H:i:s')
         );
 
         $this->db->insert('prestamo', $data);
