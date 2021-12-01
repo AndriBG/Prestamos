@@ -29,4 +29,8 @@ class Calculate extends CI_Controller
             $this->CalculateModel->insert($capital, $amt_fees, $freq, $s_date);
         }
     }
+
+    public function get_by_id(){
+        
+    }
 }
