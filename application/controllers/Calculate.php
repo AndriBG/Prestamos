@@ -30,7 +30,7 @@ class Calculate extends CI_Controller
         }
     }
 
-    public function get_by_id(){
+    // public function get_by_id(){
         
-    }
+    // }
 }
